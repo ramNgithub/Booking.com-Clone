@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+
+    <style>
+        #navbar{
+            height:350px;
+            /* border:solid red; */
+            background-color: rgb(5, 55, 120);
+            color: white;
+        }
+        #navbar>#top{
+            width:80%;
+            height:80px;
+            display: flex;
+            justify-content: space-between;
+            /* border:solid blue; */
+            margin: auto;
+            align-items: center;
+        }
+        #navbar>#top>div{
+            /* border:solid red; */
+            width:50%;
+            height:35px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #navbar>#top>div>a:nth-child(1){
+            /* border:0; */
+            background-color: rgb(5, 55, 120);
+            color: white;
+            margin-right: -10px;
+            text-decoration: none;
+        }
+        #navbar>#top>div>a:nth-child(2){
+            /* border-radius: 100px; */
+            border:0;
+            background-color: rgb(5, 55, 120);
+            margin-right: -40px;
+        }
+        #navbar>#top>div>a:nth-child(2)>img{
+            width:23px;
+            border-radius: 50px;
+            background-color: rgb(5, 55, 120);
+            margin-top: 5px;
+        }
+        .qmark{
+            color:white;
+            border:solid white;
+            border-radius: 50px;
+            padding: 3px;
+        }
+        .liner{
+            color:white;
+            border:solid rgb(190, 190, 190);
+            padding:8px;
+            text-decoration: none;
+            /* margin-right: -10px; */
+        }
+        
+        
+        
+          #top>div>button{
+           background-color: white;
+           color:rgb(46, 46, 163);
+           padding: 10px 20px;
+           font-size: 14px;
+           border-color: rgb(115, 183, 211);
+           margin-left: -15px;
+          }
+       
+        #stay img{
+           width:20px;
+           height:20px;
+           margin-top: 15px;
+           margin-right: 5px;
+           
+        }
+        #stay>a{
+            display:flex;
+            color:white;
+            text-decoration: none;
+           
+            
+            cursor:pointer
+        }
+        #stay>a:hover{
+            border-radius: 25px;
+            padding: 0px 10px;
+            border:solid rgb(244, 243, 243);
+        }
+
+        #stay{
+            width:50%;
+            /* border:solid blue; */
+            margin-left: 150px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        #findtxt{
+            /* border:solid blue; */
+            width:50%;
+            height:120px;
+            margin-left: 150px;
+            margin-top: 35px;
+        }
+        #findtxt>h1{
+            font-size: 50px;
+            margin-top: -10px ;
+        }
+        #findtxt>h4{
+         font-size: 30px;
+         margin-top: -30px ;
+        }
+        .date::before{
+            color:#000000;
+            content: attr(placeholder);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .date{
+            color:#ffffff;
+            width:100px;
+            padding: 10px;
+            border:0px;
+            
+        }
+        
+        .available{
+            width:70px;
+            padding: 10px;
+            border:0px;
+            font-size: 15px;
+        }
+       .available::placeholder{
+        font-weight: bold;
+        color:black
+       }
+       .Place::placeholder{
+          font-weight: bold;
+          
+       }
+       .Place{
+        padding: 5px 50px 5px 5px;
+        border:0px;
+        font-size: 15px;
+        
+       }
+       .search{
+        
+        border:0px;
+        background-color: rgb(42, 134, 254);
+        color:white;
+        font-size: 20px;
+       }
+        
+       table{
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width:78%;
+        margin-top:-35px;
+        margin-left: 150px;
+        
+        text-align: center;
+       }
+       table td{
+        border: 5px solid rgb(255, 198, 27);
+        background-color: white;
+        
+       }
+       table td:nth-child(5){
+        background-color: rgb(42, 134, 254);
+       }
+       
+       
+       
+    
+    </style>
+    <style>
+        #trwork{
+            display: flex;
+            margin-left: 150px;
+            
+        }
+        #trwork>input{
+            width: 20px;
+            
+        }
+        #covid{
+            display: flex;
+            margin-left: 150px;
+            /* border:solid red; */
+            width:76%;
+            padding:15px;
+            height:60px;
+            align-items: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #covid>img{
+            width:50px;
+            height:30px;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+        #covid>p>a{
+            text-decoration: none ;
+            color:blue
+        }
+        #discount{
+            /* border:solid red; */
+            width:78%;
+            margin-left: 150px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: flex;
+          margin-top: 20px;
+        }
+        #discount>img{
+            width:150px;
+            margin:20px ;
+        }
+        #discount>div{
+            margin-top: 30px;
+        }
+        #discount>div>button{
+            padding: 10px;
+            color:white;
+            background-color: rgb(42, 134, 254);
+           border:0px;
+        }
+    </style>
+    <style>
+      #exploreindia{
+        width:78%;
+        /* border:solid red; */
+        height:320px;
+        margin-left: 150px;
+        line-height: 10px;
+        margin-top: 30px;
+      }
+      #exploreindia>div{
+        display: grid;
+        grid-template-columns: repeat(6,200px);
+        grid-template-rows: repeat(1,300px);
+        
+      }
+      /* #exploreindia{
+
+      } */
+      #exploreindia>div>div>img{
+        width:175px
+      }
+      #img{
+        width:300px;
+        height:200px;
+        background:url("https://cf.bstatic.com/xdata/images/region/square250/49646.webp?k=b7f38878b9164ee38e0b99c4d4646dbea76b7bf4add8464b1aa75e4c9d0efc6e&o=");
+        background-blend-mode: screen;
+        
+    }
+    #largeimg{
+        width: 78%;
+        height:300px;
+        /* border:solid red; */
+        display: grid;
+        grid-template-columns: repeat(2,580px);
+        gap:12px;
+        margin-left: 150px;
+        margin-top: 20px;
+    }
+    #largeimg>div:nth-child(1){
+        height:300px;
+        line-height: 10px;
+        color:rgb(255, 255, 255);
+        padding: 10px;
+        
+        background-image: url("https://th.bing.com/th/id/OIP.ja2jEUw8VbJkvGcZ4L8I5gHaE6?w=304&h=202&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        position: relative;
+        font-weight: bold;
+        /* border:solid blue; */
+        /* width:40%; */
+    }
+    #largeimg>div:nth-child(2){
+        height:300px;
+        line-height: 10px;
+        color:rgb(255, 255, 255);
+        box-shadow: inset 0px 30px 90px -10px rgb(7, 46, 96);
+
+background-image: url("https://3.bp.blogspot.com/-OdaYI2PVP60/WIW24cpdOOI/AAAAAAAAMDM/rOgDt-J5l1cy1ABo7zAGEYvuUKBAc-d_QCLcB/s1600/4923.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+background-position:center ;
+padding: 10px;
+font-weight: bold;
+/* position: relative; */
+/* border:solid blue; */
+/* width:40%; */
+    }
+    #largeimg2{
+        width: 78%;
+        height:300px;
+        /* border:solid red; */
+        display: grid;
+        grid-template-columns: repeat(3,382px);
+        gap:12px;
+        margin-left: 150px;
+        margin-top: 30px;
+    }
+    #largeimg2>div:nth-child(1){
+        height:280px;
+        line-height: 10px;
+        color:rgb(255, 255, 255);
+        padding: 10px;
+        box-shadow: inset 0px 30px 90px -10px rgb(7, 46, 96);
+        
+        background-image: url("https://cf.bstatic.com/xdata/images/city/square250/971346.webp?k=40eeb583a755f2835f4dcb6900cdeba2a46dc9d50e64f2aa04206f5f6fce5671&o=");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        position: relative;
+        font-weight: bold;
+        /* border:solid blue; */
+    }
+    #largeimg2>div:nth-child(2){
+        height:280px;
+        line-height: 10px;
+        color:rgb(255, 255, 255);
+        padding: 10px;
+        box-shadow: inset 0px 30px 90px -10px rgb(7, 46, 96);
+        
+        background-image: url("https://th.bing.com/th/id/R.898336e340edf307c0ab6d59cbce2342?rik=V1pExqN9GCSYOQ&riu=http%3a%2f%2fwww.blog.weekendthrill.com%2fwp-content%2fuploads%2f2016%2f05%2f1-24.jpg&ehk=M0Mdo6%2bd%2fYNpt%2fLq5dY%2bkEzn%2flSsroi8LUoJTERK0w0%3d&risl=1&pid=ImgRaw&r=0");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        position: relative;
+        font-weight: bold;
+        /* border:solid blue; */
+    }
+    #largeimg2>div:nth-child(3){
+        height:280px;
+        line-height: 10px;
+        color:rgb(255, 255, 255);
+        padding: 10px;
+        font-weight: bold;
+       
+       
+        box-shadow: inset 0px 30px 90px -10px rgb(7,46,96);
+        
+        background-image: url("https://im.whatshot.in/img/2020/Jun/swaminarayan-cropped-1591099308-1592805143.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        position: relative;
+        /* border:solid blue; */
+    }
+    </style>
+     <style>
+#browsepro{
+    width:78%;
+    height:350px;
+    /* border:solid red; */
+    margin-left: 150px;
+    margin-top: 30px;
+}
+#browsepro>h1{
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+#browsepro>div{
+    /* border:solid blue; */
+    height:290px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
+#browsepro>div>div{
+    line-height: 10px;
+}
+#browsepro>div>div>img{
+    width:284px;
+}
+     </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="top">
+            <h1>Booking.com</h1>
+            <div>
+                <a href="">INR</a>
+                <a href="">
+                    <img src="https://cf.bstatic.com/static/img/flags/new/48-squared/in/20aa535a5d3c505dd02fea275ed1a36c0fb1fe08.png" alt="">
+                </a>
+                <a>
+                    <a class="qmark" href="https://secure.booking.com/help.en-gb.html?label=gen173nr-1DCAEoggI46AdIM1gEaGyIAQGYAQm4ARfIAQzYAQPoAQGIAgGoAgO4Aoj43ZYGwAIB0gIkYjUxYzllYTctMzQ0NC00ZGFiLTk2ZmItZTRhODExYzIzNjZj2AIE4AIB&sid=090f7f70a31764c015bd5a8e5707ae22&source=header">?</a>
+                </a>
+                <a class="liner" href="https://join.booking.com/?lang=en-gb&utm_source=topbar&utm_medium=frontend&amp;label=gen173nr-1DCAEoggI46AdIM1gEaGyIAQGYAQm4ARfIAQzYAQPoAQGIAgGoAgO4AtKB3pYGwAIB0gIkNzEzODAzMGQtZDFhYi00MGM2LTg5NmItM2YyMTJlMmJmZjFk2AIE4AIB&amp;aid=304142">List your property</a>
+                <button>Register</button>
+                <button>Sign in</button>
+            </div>
+        </div>
+        <div id="stay">
+            <a >
+                <img src="https://th.bing.com/th/id/OIP.ymDpf62hm6huwQAhvIQ8rQHaHa?pid=ImgDet&w=221&h=221&c=7&dpr=1.25"/>
+                <p>Stays</p>
+            </a>
+            <a >
+                <img src="https://th.bing.com/th/id/OIP.U_m-OU2SDVmx2YWndf5zNwHaHa?w=203&h=203&c=7&r=0&o=5&dpr=1.25&pid=1.7"/>
+                <p>Flights</p>
+            </a>
+            <a >
+                <img src="https://th.bing.com/th/id/OIP.Puxw8NB8iO58Y_E-jBMrAgHaID?w=197&h=214&c=7&r=0&o=5&dpr=1.25&pid=1.7"/>
+                <p>Flighr + Hotel</p>
+            </a>
+            <a>
+                <img src="https://image.shutterstock.com/image-vector/car-silhouette-260nw-408492268.jpg"/>
+                <p>Car rentals</p>
+            </a>
+            <a>
+                <img src="https://image.shutterstock.com/image-vector/silhouette-atraktsion-colorful-ferris-wheel-600w-1188352369.jpg"/>
+                <p>Attractions</p>
+            </a>
+            <a>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Zusatzschild_800_-_Taxi_(300x150)%2C_StVO_1976.svg/301px-Zusatzschild_800_-_Taxi_(300x150)%2C_StVO_1976.svg.png"/>
+                <p>Airport taxis</p>
+            </a>
+        </div>
+        <div id="findtxt">
+            <h1>Find your next stay</h1>
+            <h4>search low prices on hotels,homes and much more...</h4>
+        </div>
+    </div>
+<table>
+    <th>
+        <td><input class="Place" type="text" placeholder="Where are you going?"></td>
+        <td><input type="date" class="date" placeholder="check-in"></input>
+            
+            <input type="date" class="date" placeholder="check-out"></button>
+        </td>
+        <td>
+            <input class="available" type="number" placeholder="adult"/>
+            <input class="available" type="number" placeholder="children"/>
+            <input class="available" type="number" placeholder="room"/>
+        </td>
+        <td>
+            <button class="search">Search</button>
+        </td>
+    
+    </th>
+</table>
+<div id="trwork">
+<input type="checkbox">
+<p>I'm travelling for work</p>
+</div>
+
+<div id="covid">
+   <img src="https://th.bing.com/th/id/OIP.QV9tJ17E2Yi1xWOQBVKJ-QHaEi?pid=ImgDet&w=221&h=135&c=7&dpr=1.25" alt="">
+   <p>Get the advice you need.Check the latest COVID-19 restrictions before you travel.<a href="https://www.booking.com/covid-19.html?aid=304142&label=gen173nr-1DCAEoggI46AdIM1gEaGyIAQGYAQm4ARfIAQzYAQPoAQGIAgGoAgO4AtKB3pYGwAIB0gIkNzEzODAzMGQtZDFhYi00MGM2LTg5NmItM2YyMTJlMmJmZjFk2AIE4AIB">Learn more</a></p>
+</div>
+
+<div id="discount">
+    <img src="https://r-xx.bstatic.com/data/mm/index_banner_getaway22_summer_2.jpg"/>
+    <div>
+    <h3>Save 15% or more</h3>
+    <p>This summer,make your dream trip a reality.Book and stay for less before 30 Sep 2022</p>
+    <button>Explore deals</button>
+    </div>
+</div>
+
+<div id="exploreindia">
+   <h2>Explore india</h2>
+   <p>These popular destinations have a lot to offer</p>
+   <div>
+     <div>
+        <img src="https://cf.bstatic.com/xdata/images/city/square250/684682.webp?k=30cf9de93f2a0f87eed7d2d0d9b3e6eccd5dcf3a4b68b4e0151c0800ddc84af7&o="/>
+         <h3>Lonavala</h3>
+         <p>749 properties</p>
+     </div>
+     <div>
+        <img src="https://cf.bstatic.com/xdata/images/region/square250/49646.webp?k=b7f38878b9164ee38e0b99c4d4646dbea76b7bf4add8464b1aa75e4c9d0efc6e&o="/>
+        <h3>Goa</h3>
+        <p>5,244 properties</p>
+     </div>
+     <div>
+        <img src="https://cf.bstatic.com/xdata/images/city/square250/684765.webp?k=3f7d20034c13ac7686520ac1ccf1621337a1e59860abfd9cbd96f8d66b4fc138&o="/>
+        <h3>New Delhi</h3>
+        <p>2911 properties</p>
+     </div>
+     <div>
+        <img src="https://cf.bstatic.com/xdata/images/city/square250/971346.webp?k=40eeb583a755f2835f4dcb6900cdeba2a46dc9d50e64f2aa04206f5f6fce5671&o="/>
+        <h3>Mumbai</h3>
+        <p>1651 properties</p>
+     </div>
+     <div>
+        <img src="https://cf.bstatic.com/xdata/images/city/square250/684534.webp?k=d1fe86c22f2433f4e2dda14ddcbe80feb024b0fb30305e5684a1241fba5d4cff&o="/>
+        <h3>Bangalore</h3>
+        <p>2,038 properties</p>
+     </div>
+     <div>
+        <img src="https://cf.bstatic.com/xdata/images/city/square250/684657.webp?k=66dc5035b43e9bb86b756e381e4fec2558064af4a63a8af17836725a854c03ee&o="/>
+        <h3>Jaipur</h3>
+        <p>1,558 properties</p>
+     </div>
+   </div>
+</div>
+<div id="largeimg">
+    <div>
+        <h1>New Delhi <img src="https://cf.bstatic.com/static/img/flags/24/in/56cd199c9f53cba5ccd7667c3a1a196f95e60a10.png" alt=""></h1>
+         <p>2,913 properties </p>
+    </div>
+    <div>
+        <h1>Banglore <img src="https://cf.bstatic.com/static/img/flags/24/in/56cd199c9f53cba5ccd7667c3a1a196f95e60a10.png" alt=""></h1>
+         <p>2,040 properties</p>
+         <div></div>
+    </div>
+</div>
+<div id="largeimg2">
+    <div>
+        <h1>Mumbai <img src="https://cf.bstatic.com/static/img/flags/24/in/56cd199c9f53cba5ccd7667c3a1a196f95e60a10.png" alt=""></h1>
+        <p>1651 properties</p>
+    </div>
+    <div>
+        <h1>Chenni <img src="https://cf.bstatic.com/static/img/flags/24/in/56cd199c9f53cba5ccd7667c3a1a196f95e60a10.png" alt=""></h1>
+        <p>1406 properties</p>
+    </div>
+    <div><h1>Pune <img src="https://cf.bstatic.com/static/img/flags/24/in/56cd199c9f53cba5ccd7667c3a1a196f95e60a10.png" alt=""></h1>
+        <p>822 properties</p></div>
+</div>
+<div id="browsepro">
+    <h1>Browse by property type</h1>
+    <div>
+        <div>
+            <img src="https://r-xx.bstatic.com/xdata/images/xphoto/300x240/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o=" />
+            <h3>Hotels</h3>
+            <p>876,519 hotels</p>
+        </div>
+        <div>
+            <img src="https://q-xx.bstatic.com/xdata/images/hotel/300x240/119467716.jpeg?k=f3c2c6271ab71513e044e48dfde378fcd6bb80cb893e39b9b78b33a60c0131c9&o=" alt="">
+            <h3>Hotels</h3>
+            <p>876,519 hotels</p>
+        </div>
+        <div>
+            <img src="https://q-xx.bstatic.com/xdata/images/xphoto/300x240/45450084.jpeg?k=f8c2954e867a1dd4b479909c49528531dcfb676d8fbc0d60f51d7b51bb32d1d9&o=" alt="">
+            <h3>Hotels</h3>
+            <p>876,519 hotels</p>
+        </div>
+        <div>
+            <img src="https://q-xx.bstatic.com/xdata/images/hotel/300x240/100235855.jpeg?k=5b6e6cff16cfd290e953768d63ee15f633b56348238a705c45759aa3a81ba82b&o=" alt="">
+            <h3>Hotels</h3>
+            <p>876,519 hotels</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+     
+</script>
