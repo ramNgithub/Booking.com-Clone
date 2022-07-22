@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <style>
+        #navbar{
+            /* border:solid red; */
+            height: 60px;
+            display: flex;
+            background-color:rgb(5, 55, 120) ;
+           
+        }
+        #but{
+            
+            margin-left: 50px;
+            border-radius: 50px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background-color: rgb(5, 55, 120);
+            color: white;
+            border-color: white;
+        }
+        #navbar>div>img{
+            width: 30px;
+         margin-left: 800px;
+         border-radius: 50px;
+         margin-top: 15px;
+        }
+        #navbar>a{
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            margin-left: 250px;
+            margin-top: 13px;
+        }
+        #inputsec{
+            /* border:solid red; */
+            width:450px;
+            padding-left: 10px;
+            margin-left: 600px;
+            margin-top: 100px;
+        }
+
+        #inputsec>h2{
+            
+            margin-top: 0px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #inputsec>input{
+            width:300px;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        #inputsec>button{
+          padding: 10px;
+          width:323px;
+          margin-top: 15px;
+          color:white;
+          font-size: 15px;
+          background-color: rgb(8, 96, 190);
+          border:0px;
+        }
+        #inputsec>p{
+            margin-left: 80px;
+        }
+        #signuplogo{
+            width:340px;
+            /* border:solid red; */
+            height:70px;
+            margin-left: 600px;
+        }
+        #signuplogo>div>img{
+            width:80px;
+            height:70px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #signuplogo>div{
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        body>h3{
+            margin-left: 690px;
+            color:rgb(8, 123, 254);
+            margin-top: 50px;
+        }
+        body>p{
+            width:400px;
+            margin-left: 570px;
+            margin-top: 50px;
+            text-align-last: center;
+            color:rgb(166, 161, 161)
+        }
+        body>p>a{
+            color:rgb(8, 123, 254);
+        }
+        .lastp{
+            width:300px;
+            margin-left: 620px;
+            color:rgb(166, 161, 161)
+        }
+    </style>
+</head>
+<body>
+     <div id="navbar">
+        <a>Booking.com</a>
+         <div>
+            <img src="https://q-xx.bstatic.com/backend_static/common/flags/new/48-squared/in.png" />
+            
+         </div>
+        
+        <button id="but">?</button>
+     </div>
+     <div id="inputsec">
+     <h2>Sign in or create an account</h2>
+     <label for="">Enter Email</label><br>
+     <input id="email" type="email" placeholder="enter email here"><br>
+     <button id="butn">Continue with email</button>
+     <p>or use one of these options</p>
+    </div>
+    <div id="signuplogo">
+        <div>
+            <img src="https://gifimage.net/wp-content/uploads/2017/11/facebook-logo-gif-8.gif" alt="">
+           <img src="https://th.bing.com/th/id/R.2a0d85176c2920afc72f2a3c439eb270?rik=3iXEzFKJ18JRiw&riu=http%3a%2f%2flogok.org%2fwp-content%2fuploads%2f2015%2f09%2fGoogle-logo-2015-G-icon.png&ehk=rdZ4hRCI7YkCC6Oc1jOO8Ald0l%2fiG2FplTA7YYFqQfY%3d&risl=&pid=ImgRaw&r=0"/>
+          <img src="https://th.bing.com/th/id/R.aef790fb1dd321fe3c3d433ea4af43a2?rik=oL695dRKvUwu9w&riu=http%3a%2f%2fwww.kyabytecranetrucks.com.au%2fbut4.png&ehk=Z9NRVJ8PV6V%2bWDAe3afR4B2rj%2fr6ajG3%2bC9xGAboDzU%3d&risl=&pid=ImgRaw&r=0" alt="">
+        </div>
+        
+    </div>
+
+    <h3>More ways to sign in</h3>
+    
+    <p>By signing in or creating an account, you agree with ou  <a>Terms & conditions</a> and <a>Privacy statement</a></p>
+     <p class="lastp">All rights reserved.
+        Copyright (2006 - 2022) - Booking.com™</p>
+</body>
+</html>
+<script>
+     document.querySelector("#butn").addEventListener("click",signupfun);
+     let arr=JSON.parse(localStorage.getItem("signup"))||[];
+
+     function signupfun(){
+        event.preventDefault();
+        let obj={
+            Email:document.querySelector("#email").value,
+            
+        }
+        arr.push(obj);
+         
+        localStorage.setItem("signup",JSON.stringify(arr))
+         if(arr.Email==null){
+        window.location.href="password.html"
+         }else{
+            window.location.href="login.html"
+         }
+     }
+</script>
