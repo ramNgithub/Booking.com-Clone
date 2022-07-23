@@ -54,6 +54,7 @@
             width:300px;
             padding: 10px;
             margin-top: 5px;
+            margin-bottom: 20px;
         }
         #inputsec>button{
           padding: 10px;
@@ -119,7 +120,9 @@
      <h2>Sign in or create an account</h2>
      <label for="">Enter Email</label><br>
      <input id="email" type="email" placeholder="enter email here"><br>
-     <button id="butn">Continue with email</button>
+     <label for="">Enter password</label><br>
+     <input id="pass" type="password" placeholder="enter password">
+     <button  id="butn">Continue with email</button>
      <p>or use one of these options</p>
     </div>
     <div id="signuplogo">
@@ -139,22 +142,48 @@
 </body>
 </html>
 <script>
-     document.querySelector("#butn").addEventListener("click",signupfun);
-     let arr=JSON.parse(localStorage.getItem("signup"))||[];
+     
+    
+     
+     
+        document.querySelector("#butn").addEventListener("click",signupfun);
+        let arr=JSON.parse(localStorage.getItem("signup"))||[];
+        
+        
+        
+        function signupfun(){
 
-     function signupfun(){
-        event.preventDefault();
-        let obj={
-            Email:document.querySelector("#email").value,
+
             
-        }
-        arr.push(obj);
+            event.preventDefault();
+            let eemail=document.querySelector("#email").value;
+            let pass=document.querySelector("#pass").value;
+
+            if(eemail=="" || pass==""){
+               alert("please fill details");
+               return;
+            }
+           let obj={
+            Email:eemail,
+            Pass:pass,
+           }
+           
+          arr.push(obj);
+          alert("signup successful")
+          
+          window.location.href="login.html"
+          
+          localStorage.setItem("signup",JSON.stringify(arr))
+            
+
+      
+
          
-        localStorage.setItem("signup",JSON.stringify(arr))
-         if(arr.Email==null){
-        window.location.href="password.html"
-         }else{
-            window.location.href="login.html"
-         }
-     }
+        }
+       
+       
+  
+   
+
+     
 </script>

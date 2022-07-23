@@ -716,8 +716,8 @@ background-color: rgb(31, 31, 163);
                     <a class="qmark" href="https://secure.booking.com/help.en-gb.html?label=gen173nr-1DCAEoggI46AdIM1gEaGyIAQGYAQm4ARfIAQzYAQPoAQGIAgGoAgO4Aoj43ZYGwAIB0gIkYjUxYzllYTctMzQ0NC00ZGFiLTk2ZmItZTRhODExYzIzNjZj2AIE4AIB&sid=090f7f70a31764c015bd5a8e5707ae22&source=header">?</a>
                 </a>
                 <a class="liner" href="https://join.booking.com/?lang=en-gb&utm_source=topbar&utm_medium=frontend&amp;label=gen173nr-1DCAEoggI46AdIM1gEaGyIAQGYAQm4ARfIAQzYAQPoAQGIAgGoAgO4AtKB3pYGwAIB0gIkNzEzODAzMGQtZDFhYi00MGM2LTg5NmItM2YyMTJlMmJmZjFk2AIE4AIB&amp;aid=304142">List your property</a>
-                <button>Register</button>
-                <button>Sign in</button>
+                <button id="Register">Register</button>
+                <button id="signin">Sign in</button>
             </div>
         </div>
         <div id="stay">
@@ -1214,4 +1214,20 @@ function interestfun(){
     
     document.querySelector("#hoders").append(an1,an2,an3,an4,an5,an6,an7,an8,an9,an10,an11,an12,an13,an14,an15,an16,an17,an18,an19,an20);
 }  
+
+
+
+
+     document.querySelector("#Register").addEventListener("click",refistfun)
+      
+      function refistfun(){
+             window.location.href="signup.html"
+      }
+
+      document.querySelector("#signin").addEventListener("click",signfun)
+      
+      function signfun(){
+        
+             window.location.href="login.html"
+      }
 </script>

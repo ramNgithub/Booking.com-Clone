@@ -54,6 +54,7 @@
             width:300px;
             padding: 10px;
             margin-top: 5px;
+            margin-bottom: 20px;
         }
         #inputsec>button{
           padding: 10px;
@@ -64,9 +65,7 @@
           background-color: rgb(8, 96, 190);
           border:0px;
         }
-        #inputsec>p:nth-child(9){
-            margin-left: 150px;
-        }
+        
         #inputsec>p:nth-child(2){
               margin-top: -20px;
               margin-bottom: 30px;
@@ -107,7 +106,10 @@
             margin-left: 620px;
             color:rgb(166, 161, 161)
         }
-    </style>
+        .or{
+           margin-left: 150px;
+        }
+        </style>
 </head>
 <body>
      <div id="navbar">
@@ -123,10 +125,13 @@
      <h2>Enter your password</h2>
      <p>Please enter your Booking.com password for</p>
      <p></p>
+
+     <label for="">Email</label><br>
+     <input id="logMail" type="Enter email here" ><br>
      <label for="">Password</label><br>
-     <input type="password" ><br>
-     <button>Sign in</button>
-     <p>or</p>
+     <input id="logPass" type="password" ><br>
+     <button id="signin" >Sign in</button>
+     <p class="or">or</p>
      <button>Sign in with a verification link</button>
      
     </div>
@@ -138,4 +143,48 @@
      <p class="lastp">All rights reserved.
         Copyright (2006 - 2022) - Booking.com™</p>
 </body>
+<script>
+    let Loginpage=JSON.parse(localStorage.getItem("signup"))||[];
+       let Loginarr=JSON.parse(localStorage.getItem("login"))||[];
+       let EMail;
+       let PAss;
+          
+
+         
+            
+           document.querySelector("#signin").addEventListener("click",Signinfun)
+
+       function Signinfun(){
+        
+          EMail=document.querySelector("#logMail").value;
+          PAss=document.querySelector("#logPass").value;
+         
+          Loginpage.forEach(function (elem,index){
+            //event.preventDefault();
+       if(elem.Email===EMail && elem.Pass==PAss){
+          alert("Login Succsesfull");
+          Loginarr.push(elem)
+            //return true;
+                // event.preventDefault();
+                // window.location.href="mens.html"
+          localStorage.setItem("login",JSON.stringify(Loginarr));
+                window.location.href="index.html"
+    
+                
+            }else if(EMail==""||PAss==""){
+                alert("Please fill details");
+               
+               // return false;
+            }else if(elem.Email!=EMail||elem.Pass!=PAss){
+                alert("Wrong detail")
+                
+            }
+           
+        }) ;
+        
+        }
+        
+    
+           
+</script>
 </html>
